@@ -24,7 +24,12 @@
                     <a href data-target="#tabFormAssistente" data-toggle="tab">
                         <i class="fa fa-user-plus"></i> Cadastro de Assistente
                     </a>
-            </li>             
+            </li>
+            <li ng-if="tabFormUpdAssistente" ng-class="{active: tabFormUpdAssistente}">
+                <a href data-target="#tabFormUpdAssistente" data-toggle="tab">
+                    <i class="fa fa-user-plus"></i> Atualizar Dados do Assistente
+                </a>
+            </li>                           
         </ul>
         <div class="tab-content">
             <div class="tab-pane" 
@@ -42,6 +47,10 @@
             <div class="tab-pane" 
                 id="tabFormAssistente" 
                 ng-class="{active: tabFormAssistente}"
+                ng-include="'meuPerfil/formAssistente.html'"></div>
+            <div class="tab-pane" 
+                id="tabFormUpdAssistente" 
+                ng-class="{active: tabFormUpdAssistente}"
                 ng-include="'meuPerfil/formAssistente.html'"></div>                                   
                 <!-- <div class="tab-pane" id="tabAssistente" ng-include="'meuPerfil/formAssistente.html'"></div> --> 
         </div>

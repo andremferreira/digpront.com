@@ -13,6 +13,7 @@ angular.module('digPront').factory('tabs', [ function() {
       tabPacienteFila = false,
       tabListAssistente = false,
       tabFormAssistente = false,
+      tabFormUpdAssistente = false,
    }) {
       owner.tabList = tabList
       owner.tabCreate = tabCreate
@@ -26,6 +27,7 @@ angular.module('digPront').factory('tabs', [ function() {
       owner.tabPacienteFila = tabPacienteFila
       owner.tabListAssistente = tabListAssistente
       owner.tabFormAssistente = tabFormAssistente
+      owner.tabFormUpdAssistente = tabFormUpdAssistente
    }
 
    return { show }

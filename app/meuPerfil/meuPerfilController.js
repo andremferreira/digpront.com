@@ -64,6 +64,14 @@ function MeuPerfilController($scope, $http, $location, msgs, tabs, consts, auth)
     tabs.show($scope, { tabFormAssistente: true })
   }
 
+  $scope.showUpdAssistente = function (meuPerfil, index) {
+    $scope.meuPerfil = meuPerfil
+    meuPerfil.assistente.nomeAssist = $scope.meuPerfil.assistente[index].nomeAssist
+    meuPerfil.assistente.sobrenomeAssist = $scope.meuPerfil.assistente[index].sobrenomeAssist
+    meuPerfil.assistente.emailAssist = $scope.meuPerfil.assistente[index].emailAssist
+    tabs.show($scope, { tabFormUpdAssistente: true })
+  }
+
   $scope.cancel = function () {
     $scope.meuPerfil = {}
     $scope.getMeuPerfils()
@@ -108,8 +116,55 @@ function MeuPerfilController($scope, $http, $location, msgs, tabs, consts, auth)
     }
   }
 
+  $scope.validarAssistenteUpd = function (index) {
+    var assistente = {}
+    const emailRegex = /\S+@\S+\.\S+/
+    if (assistente) {
+      //console.log($scope.meuPerfil.assistente.nomeAssist)
+      if (!$scope.meuPerfil.assistente.passAssist || !$scope.meuPerfil.assistente.passAssist.length) {
+        msgs.addError('O atributo "Senha" é obrigatório. ')
+        return false
+      } else if (!$scope.meuPerfil.assistConfPass || !$scope.meuPerfil.assistConfPass.length) {
+        msgs.addError('O atributo "Confirmação de senha" é obrigatório. ')
+        return false
+      } else if (!$scope.meuPerfil.assistente.emailAssist || !$scope.meuPerfil.assistente.emailAssist.length) {
+        msgs.addError('O atributo "E-mail" é obrigatório.')
+        return false
+      } else if (!$scope.meuPerfil.assistente.nomeAssist || !$scope.meuPerfil.assistente.nomeAssist.length) {
+        msgs.addError('O atributo "Nome" é obrigatório.')
+        return false
+      } else if (!$scope.meuPerfil.assistente.sobrenomeAssist || !$scope.meuPerfil.assistente.sobrenomeAssist.length) {
+        msgs.addError('O atributo "Nome" é obrigatório.')
+        return false
+      } else if (!$scope.meuPerfil.assistente.emailAssist.match(emailRegex)) {
+        msgs.addError('O E-mail informado é inválido.')
+        return false
+      } else {
+        assistente.passAssist = $scope.meuPerfil.assistente.passAssist
+        assistente.emailAssist = $scope.meuPerfil.assistente.emailAssist
+        assistente.nomeAssist = $scope.meuPerfil.assistente.nomeAssist
+        assistente.sobrenomeAssist = $scope.meuPerfil.assistente.sobrenomeAssist
+        $scope.meuPerfil.assistente.splice(index, 1, assistente)
+        return true
+      }
+    }
+  }  
+
   $scope.addFormAssistente = function () {
     if ($scope.validarAssistente()) {
+      const url = `${consts.apiUrl}/users/${$scope.meuPerfil._id}`
+      $http.put(url, $scope.meuPerfil).then(function (response) {
+        $scope.showListAssistente()
+        $scope.meuPerfil = response.data
+        msgs.addSuccess('Operação realizada com sucesso!')
+      }).catch(function (resp) {
+        msgs.addError(resp.data.errors)
+      })
+    }
+  }
+
+  $scope.updFormAssistente = function (meuPerfil, index) {
+    if ($scope.validarAssistenteUpd(index)) {
       const url = `${consts.apiUrl}/users/${$scope.meuPerfil._id}`
       $http.put(url, $scope.meuPerfil).then(function (response) {
         $scope.showListAssistente()

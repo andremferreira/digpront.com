@@ -44,7 +44,7 @@
                 {{:: assistente.nomeAssist }} {{:: assistente.sobrenomeAssist }}
             </td>
             <td style="width:100px;">
-                <button class="btn btn-info" ng-click="verAssistente(assistente, $index)" ng-disabled="{{ vencido }}" style="padding:3px;">
+                <button class="btn btn-info" ng-click="showUpdAssistente(meuPerfil, $index)" ng-disabled="{{ vencido }}" style="padding:3px;">
                     <i class="fa fa-user"></i>
                 </button>
                 <button class="btn btn-danger" ng-click="excluirAssistente(meuPerfil, $index)" style="padding:3px;" ng-disabled="{{ vencido }}" ng-if="usr2">

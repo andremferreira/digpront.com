@@ -4,9 +4,13 @@
             <div role="form">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">
-                            <i class="fa fa-user-md text-info"></i> Informações do Médico
+                        <h3 class="box-title" ng-if="tabFormAssistente">
+                            <i class="fa fa-user-md text-info" ></i> Informações do Médico
                             <small>- Responsável</small>
+                        </h3>
+                        <h3 class="box-title" ng-if="tabFormUpdAssistente">
+                            <i class="fa fa-user-md text-info" ></i> Atualizar 
+                            <small>- Dados do Assistente </small>
                         </h3>
                     </div>
                     <table class="table">
@@ -66,8 +70,10 @@
             </div>
         </form>
         <div class="box-footer">
-            <button class="btn btn-info" ng-click="addFormAssistente()">
+            <button class="btn btn-info" ng-click="addFormAssistente()" ng-if="tabFormAssistente">
                 <i class="fa fa-check"></i> Salvar</button>
+                <button class="btn btn-warning" ng-click="updFormAssistente(meuPerfil, index)" ng-if="tabFormUpdAssistente">
+                <i class="fa fa-pencil"></i> Alterar</button>                
             <button class="btn btn-default" ng-click="cancel()">
                 <i class="fa fa-remove text-red"></i> Cancelar</button>
         </div>
