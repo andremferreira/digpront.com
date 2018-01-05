@@ -1,0 +1,78 @@
+<div class="box-body">
+    <form>
+        <div role="form">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">
+                        <i class="fa fa-h-square text-info"></i> Histórico
+                        <small> - Realizar Nova Consulta</small>
+                    </h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus text-info"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <field label-style="text-transform: capitalize;" id="pacienteNome" label="Nome" model="paciente.nome" grid="12 6 4" class="text-uppercase"
+                        readonly="tabConsulta"></field>
+                    <field label-style="text-transform: capitalize;" id="pacienteSobrenome" label="Sobrenome" model="paciente.sobrenome" grid="12 6 4"
+                        class="text-uppercase" readonly="tabConsulta"></field>
+                    <field label-style="text-transform: capitalize;" id="pacienteIdade" label="Idade" model="paciente.idade" grid="6 4 2" class="text-uppercase"
+                        readonly="tabConsulta"></field>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Criar</label>
+                            <div class="form-group">
+                                <button class="btn btn-success" ng-click="addConsultaBtn(paciente)" ng-disabled="!usr2" >
+                                    <i class="fa fa-file-o "></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:15%;">Data da Consulta </th>
+            <th style="width:25%;">Queixa do Paciente</th>
+            <th style="width:20%;">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="consultas in paciente.consultas">
+            <td>
+                <td-fmt-date text="{{:: consultas.dataConsulta }}"></td-fmt-date>
+            </td>
+            <td>{{:: consultas.queixa }}</td>
+            <td style="width:100px;">
+                <button class="btn btn-info" ng-click="detalhesConsulta(paciente, $index)" style="padding:3px;">
+                    <i class="fa fa-file-powerpoint-o"></i>
+                </button>
+                <button class="btn bg-maroon " ng-click="duplicarConsulta(paciente, $index)" ng-if="usr2" style="padding:3px;">
+                    <i class="fa fa-copy"></i>
+                </button>
+                <button class="btn btn-warning" ng-click="editarConsulta(paciente, $index)" ng-if="usr2" style="padding:3px;">
+                    <i class="fa fa-pencil"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="box-footer clearfix">
+    <span>   
+        <a href="/#!/pacientes" class="btn btn-default" ng-click="cancel()" ng-if="!fila.fl">
+            <i class="fa fa-remove text-red"></i> Cancelar
+        </a>
+    </span>
+    <span>
+        <a href="/#!/fila" class="btn btn-default" ng-if="fila.fl" ng-click="cancel()">
+            <i class="fa fa-mail-reply-all text-orange"></i> Retornar
+        </a>
+    </span>
+</div>

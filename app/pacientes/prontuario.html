@@ -1,0 +1,202 @@
+<div class="box-body">
+    <form>
+        <div role="form">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">
+                        <i class="fa fa-file-text text-aqua"></i> Ficha
+                        <small> - Atendimento</small>
+                    </h3>
+                    <hr>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Queixa</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.queixa" style="width:100%; height:80px;" name="pacienteConsultaQueixa" id="pacienteConsultaQueixa"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Anamnese</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.anamnese" style="width:100%; height:80px;" name="pacienteConsultaAnamnese" id="pacienteConsultaAnamnese"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Antecedente</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.antecedente" style="width:100%; height:50px;" name="pacienteConsultaAntecedente" id="pacienteConsultaAntecedente"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Alergia</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.alergia" style="width:100%; height:50px;" name="pacienteConsultaAlergia" id="pacienteConsultaAlergia"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Histórico Familiar</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.historicoFamiliar" style="width:100%; height:50px;" name="pacienteConsultaHistoricoFamiliar"
+                                                id="pacienteConsultaHistoricoFamiliar" class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Exame Físico</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.exameFisico" style="width:100%; height:50px;" name="pacienteConsultaExameFisico" id="pacienteConsultaExameFisico"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Exame Complementar</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.exameCompl" style="width:100%; height:50px;" name="pacienteConsultaExameCompl" id="pacienteConsultaExameCompl"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Conduta</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.conduta" style="width:100%; height:50px;" name="pacienteConsultaConduta" id="pacienteConsultaConduta"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Receita</label>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:95%; text-align:Baseline;">
+                                        <div class="input-group" style="width:100%;">
+                                            <textarea ng-model="consulta.receitaMedica" style="width:100%; height:50px;" name="pacienteConsultaReceitaMedica" id="pacienteConsultaReceitaMedica"
+                                                class="form-control text-uppercase"></textarea>
+                                        </div>
+                                    </td>
+                                    <td style="width:5%; vertical-align:bottom; padding-left:5px;">
+                                        <button class="btn btn-danger" style="padding:5px;" ng-click="limpar()">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="box-footer">
+        <button class="btn btn-info" ng-click="addFormConsulta()" ng-if="tabFormConsulta">
+            <i class="fa fa-check"></i> Salvar</button>
+        <button class="btn btn-info" ng-click="editFormConsulta()" ng-if="tabFormConsultaAlterar">
+            <i class="fa fa-pencil"></i>Alterar</button>
+        <button class="btn btn-default" ng-click="cancelConsulta(paciente)">
+            <i class="fa fa-remove text-red"></i> Cancelar</button>
+    </div>

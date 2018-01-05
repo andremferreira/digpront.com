@@ -1,0 +1,53 @@
+<div class="col-xs-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="debt in billingCycle.debts">
+        <td>
+          <input ng-model="debt.name" class="form-control" placeholder="Informe o Nome" ng-readonly="tabDelete" />
+        </td>
+        <td>
+          <input ng-model="debt.value" class="form-control" placeholder="Informe a Valor" ng-readonly="tabDelete" ng-change="calculateValues()"
+            type="number" />
+        </td>
+        <td>
+          <!--input ng-model="debt.status" class="form-control"/-->
+          <select class="form-control" ng-model="debt.status" ng-readonly="tabDelete">
+            <option value="PAGO">PAGO</option>
+            <option value="AGENDADO">AGENDADO</option>
+            <option value="PENDENTE">PENDENTE</option>
+          </select>
+        </td>
+        <td style="width:70px;" ng-if="!tabDelete">
+          <button class="btn btn-success" ng-click="addDebt($index)" style="width: 20px; height:34px; padding:2px;">
+            <i class="fa fa-plus"></i>
+          </button>
+          <!-- <button class="btn btn-warning" ng-click="cloneDebt($index,debt)">
+            <i class="fa fa-clone"></i>
+          </button> -->
+          <button class="btn btn-danger" ng-click="deleteDebt($index)" style="width: 20px; height:34px; padding:2px;">
+            <i class="fa fa-trash-o"></i>
+          </button>
+        </td>
+        <td style="width:70px;" ng-if="tabDelete">
+          <button class="btn btn-success disabled" style="width: 20px; height:34px; padding:2px;">
+            <i class="fa fa-plus"></i>
+          </button>
+          <!-- <button class="btn btn-warning disabled">
+            <i class="fa fa-clone"></i>
+          </button> -->
+          <button class="btn btn-danger disabled" style="width: 20px; height:34px; padding:2px;">
+            <i class="fa fa-trash-o"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

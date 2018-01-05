@@ -1,0 +1,35 @@
+<div role="form">
+    <div class="box-body">
+        <form>
+            <div role="form">
+                <field label-style="text-transform: capitalize;" id="medicoId" label="Cód. Médico" model="paciente.medicoId"
+                    placeholder="Informe o sobrenome" grid="6" readonly="tabPacienteFila"></field>
+                <field label-style="text-transform: capitalize;" id="pacienteId" label="Cód. Paciente" model="paciente._id"
+                    placeholder="Informe o sobrenome" grid="6" readonly="tabPacienteFila"></field>
+                <field label-style="text-transform: capitalize;" class="text-uppercase" id="pacienteNome" label="Nome" model="paciente.nome"
+                    placeholder="Informe o nome" grid="12 6 4" readonly="tabPacienteFila"></field>
+                <field label-style="text-transform: capitalize;" class="text-uppercase" id="pacienteSobrenome" label="Sobrenome" model="paciente.sobrenome"
+                    placeholder="Informe o sobrenome" grid="12 6 4" readonly="tabPacienteFila"></field>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Dt. Nascimento</label>
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="date" ng-model="fila.dataFila" name="dataFila" class="form-control pull-right datepicker"
+                                id="dataFila">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="box-footer">
+        <button class="btn btn-info" ng-click="addFila(paciente, fila)" ng-if="tabPacienteFila">
+            <i class="fa fa-check"></i> Adicionar</button>
+        <a href="/#!/pacientes" class="btn btn-default" ng-click="cancel()">
+            <i class="fa fa-remove text-red"></i> Cancelar
+        </a>
+    </div>
+</div>

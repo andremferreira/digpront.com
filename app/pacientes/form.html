@@ -1,0 +1,393 @@
+<div role="form">
+    <div class="box-body">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">Nome</label>
+                <input ng-model="paciente.nome" id="pacienteNome" class="form-control text-uppercase" type="text" placeholder="Informe o Nome"
+                />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">Sobrenome</label>
+                <input ng-model="paciente.sobrenome" id="pacienteSobrenome" class="form-control text-uppercase" type="text" placeholder="Informe o Sobrenome"
+                />
+            </div>
+        </div>
+        <div class="col-sm-4" ng-if="tabCreate">
+            <div class="form-group">
+                <label>Dt. Nascimento</label>
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="date" ng-model="paciente.dt_nascimento" name="pacienteNascimento" class="form-control pull-right datepicker"
+                        id="pacienteNascimento">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4" ng-if="tabUpdate">
+            <div class="form-group">
+                <label>Dt. Nascimento</label>
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" ng-model="paciente.dt_nascimento" name="pacienteNascimento" class="form-control pull-right datepicker"
+                        id="pacienteNascimento">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">Endereço</label>
+                <input ng-model="paciente.endereco" id="pacienteEndereco" class="form-control text-uppercase" type="text" placeholder="Informe o endereço"
+                />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">Bairro</label>
+                <input ng-model="paciente.bairro" id="pacienteBairro" class="form-control text-uppercase" type="text" placeholder="Informe o bairro"
+                />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">Cidade</label>
+                <input ng-model="paciente.cidade" id="pacienteCidade" class="form-control text-uppercase" type="text" placeholder="Informe a cidade"
+                />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Estado</label>
+                <select class="form-control" ng-model="paciente.estado">
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="EX">EX</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Profissão</label>
+                <select class="form-control" ng-model="paciente.profissao">
+                    <option value="ADMINISTRAÇÃO PÚBLICA">ADMINISTRAÇÃO PÚBLICA</option>
+                    <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
+                    <option value="AGRIMENSURA">AGRIMENSURA</option>
+                    <option value="ADMINISTRAÇÃO PÚBLICA">ADMINISTRAÇÃO PÚBLICA</option>
+                    <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
+                    <option value="AGRIMENSURA">AGRIMENSURA</option>
+                    <option value="AGROECOLOGIA">AGROECOLOGIA</option>
+                    <option value="AGRONEGÓCIOS E AGROPECUÁRIA">AGRONEGÓCIOS E AGROPECUÁRIA</option>
+                    <option value="AGRONOMIA">AGRONOMIA</option>
+                    <option value="ALIMENTOS">ALIMENTOS</option>
+                    <option value="ANÁLISE E DESENVOLVIMENTO DE SISTEMAS">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</option>
+                    <option value="ANIMAÇÃO">ANIMAÇÃO</option>
+                    <option value="AQUICULTURA">AQUICULTURA</option>
+                    <option value="ARQUEOLOGIA">ARQUEOLOGIA</option>
+                    <option value="ARQUITETURA E URBANISMO">ARQUITETURA E URBANISMO</option>
+                    <option value="ARQUIVOLOGIA">ARQUIVOLOGIA</option>
+                    <option value="ARTES VISUAIS">ARTES VISUAIS</option>
+                    <option value="ARTES">ARTES</option>
+                    <option value="ASTRONOMIA">ASTRONOMIA</option>
+                    <option value="AUTOMAÇÃO INDUSTRIAL">AUTOMAÇÃO INDUSTRIAL</option>
+                    <option value="BANCO DE DADOS">BANCO DE DADOS</option>
+                    <option value="BIBLIOTECONOMIA">BIBLIOTECONOMIA</option>
+                    <option value="BIOCOMBUSTÍVEIS">BIOCOMBUSTÍVEIS</option>
+                    <option value="BIOMEDICINA">BIOMEDICINA</option>
+                    <option value="BIOSSISTEMAS">BIOSSISTEMAS</option>
+                    <option value="BIOTECNOLOGIA E BIOQUÍMICA">BIOTECNOLOGIA E BIOQUÍMICA</option>
+                    <option value="BIOTECNOLOGIA">BIOTECNOLOGIA</option>
+                    <option value="CIÊNCIA DA COMPUTAÇÃO">CIÊNCIA DA COMPUTAÇÃO</option>
+                    <option value="CIÊNCIA DA TERRA">CIÊNCIA DA TERRA</option>
+                    <option value="CIÊNCIA E ECONOMIA">CIÊNCIA E ECONOMIA</option>
+                    <option value="CIÊNCIA E TECNOLOGIA DAS ÁGUAS/DO MAR">CIÊNCIA E TECNOLOGIA DAS ÁGUAS/DO MAR</option>
+                    <option value="CIÊNCIA E TECNOLOGIA DE ALIMENTOS">CIÊNCIA E TECNOLOGIA DE ALIMENTOS</option>
+                    <option value="CIÊNCIA E TECNOLOGIA">CIÊNCIA E TECNOLOGIA</option>
+                    <option value="CIÊNCIA E TECNOLOGIA">CIÊNCIA E TECNOLOGIA</option>
+                    <option value="CIÊNCIAS AERONÁUTICAS">CIÊNCIAS AERONÁUTICAS</option>
+                    <option value="CIÊNCIAS AGRÁRIAS">CIÊNCIAS AGRÁRIAS</option>
+                    <option value="CIÊNCIAS AGRÁRIAS">CIÊNCIAS AGRÁRIAS</option>
+                    <option value="CIÊNCIAS ATUARIAIS">CIÊNCIAS ATUARIAIS</option>
+                    <option value="CIÊNCIAS BIOLÓGICAS">CIÊNCIAS BIOLÓGICAS</option>
+                    <option value="CIÊNCIAS CONTÁBEIS">CIÊNCIAS CONTÁBEIS</option>
+                    <option value="CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS">CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS</option>
+                    <option value="CIÊNCIAS DO CONSUMO">CIÊNCIAS DO CONSUMO</option>
+                    <option value="CIÊNCIAS ECONÔMICAS">CIÊNCIAS ECONÔMICAS</option>
+                    <option value="CIÊNCIAS HUMANAS">CIÊNCIAS HUMANAS</option>
+                    <option value="CIÊNCIAS NATURAIS E EXATAS">CIÊNCIAS NATURAIS E EXATAS</option>
+                    <option value="CIÊNCIAS SOCIAIS">CIÊNCIAS SOCIAIS</option>
+                    <option value="CINEMA E AUDIOVISUAL">CINEMA E AUDIOVISUAL</option>
+                    <option value="COMÉRCIO EXTERIOR">COMÉRCIO EXTERIOR</option>
+                    <option value="COMPUTAÇÃO">COMPUTAÇÃO</option>
+                    <option value="COMUNICAÇÃO DAS ARTES DO CORPO">COMUNICAÇÃO DAS ARTES DO CORPO</option>
+                    <option value="COMUNICAÇÃO EM MÍDIAS DIGITAIS">COMUNICAÇÃO EM MÍDIAS DIGITAIS</option>
+                    <option value="COMUNICAÇÃO INSTITUCIONAL">COMUNICAÇÃO INSTITUCIONAL</option>
+                    <option value="COMUNICAÇÃO ORGANIZACIONAL">COMUNICAÇÃO ORGANIZACIONAL</option>
+                    <option value="CONSERVAÇÃO E RESTAURO">CONSERVAÇÃO E RESTAURO</option>
+                    <option value="CONSTRUÇÃO CIVIL">CONSTRUÇÃO CIVIL</option>
+                    <option value="CONSTRUÇÃO NAVAL">CONSTRUÇÃO NAVAL</option>
+                    <option value="COOPERATIVISMO">COOPERATIVISMO</option>
+                    <option value="CULTURA">CULTURA</option>
+                    <option value="LINGUAGENS E TECNOLOGIAS APLICADAS">LINGUAGENS E TECNOLOGIAS APLICADAS</option>
+                    <option value="DANÇA">DANÇA</option>
+                    <option value="DEFESA E GESTÃO ESTRATÉGICA INTERNACIONAL">DEFESA E GESTÃO ESTRATÉGICA INTERNACIONAL</option>
+                    <option value="DESIGN DE GAMES">DESIGN DE GAMES</option>
+                    <option value="DESIGN DE INTERIORES">DESIGN DE INTERIORES</option>
+                    <option value="DESIGN DE MODA">DESIGN DE MODA</option>
+                    <option value="DESIGN">DESIGN</option>
+                    <option value="DIREITO">DIREITO</option>
+                    <option value="ECOLOGIA">ECOLOGIA</option>
+                    <option value="EDUCAÇÃO FÍSICA">EDUCAÇÃO FÍSICA</option>
+                    <option value="EDUCOMUNICAÇÃO">EDUCOMUNICAÇÃO</option>
+                    <option value="ELETRÔNICA INDUSTRIAL">ELETRÔNICA INDUSTRIAL</option>
+                    <option value="ELETROTÉCNICA INDUSTRIAL">ELETROTÉCNICA INDUSTRIAL</option>
+                    <option value="ENERGIA E SUSTENTABILIDADE">ENERGIA E SUSTENTABILIDADE</option>
+                    <option value="ENERGIAS RENOVÁVEIS">ENERGIAS RENOVÁVEIS</option>
+                    <option value="ENFERMAGEM">ENFERMAGEM</option>
+                    <option value="ENGENHARIA ACÚSTICA">ENGENHARIA ACÚSTICA</option>
+                    <option value="ENGENHARIA AERONÁUTICA">ENGENHARIA AERONÁUTICA</option>
+                    <option value="ENGENHARIA AGRÍCOLA">ENGENHARIA AGRÍCOLA</option>
+                    <option value="ENGENHARIA AMBIENTAL E SANITÁRIA">ENGENHARIA AMBIENTAL E SANITÁRIA</option>
+                    <option value="ENGENHARIA BIOMÉDICA">ENGENHARIA BIOMÉDICA</option>
+                    <option value="ENGENHARIA BIOQUÍMICA DE BIOPROCESSOS E BIOTECNOLOGIA">ENGENHARIA BIOQUÍMICA DE BIOPROCESSOS E BIOTECNOLOGIA</option>
+                    <option value="ENGENHARIA CARTOGRÁFICA E DE AGRIMENSURA">ENGENHARIA CARTOGRÁFICA E DE AGRIMENSURA</option>
+                    <option value="ENGENHARIA CIVIL">ENGENHARIA CIVIL</option>
+                    <option value="ENGENHARIA DA COMPUTAÇÃO">ENGENHARIA DA COMPUTAÇÃO</option>
+                    <option value="ENGENHARIA DE ALIMENTOS">ENGENHARIA DE ALIMENTOS</option>
+                    <option value="ENGENHARIA DE BIOSSISTEMAS">ENGENHARIA DE BIOSSISTEMAS</option>
+                    <option value="ENGENHARIA DE CONTROLE E AUTOMAÇÃO">ENGENHARIA DE CONTROLE E AUTOMAÇÃO</option>
+                    <option value="ENGENHARIA DE ENERGIA">ENGENHARIA DE ENERGIA</option>
+                    <option value="ENGENHARIA DE INOVAÇÃO">ENGENHARIA DE INOVAÇÃO</option>
+                    <option value="ENGENHARIA DE MATERIAIS">ENGENHARIA DE MATERIAIS</option>
+                    <option value="ENGENHARIA DE MINAS">ENGENHARIA DE MINAS</option>
+                    <option value="ENGENHARIA DE PESCA">ENGENHARIA DE PESCA</option>
+                    <option value="ENGENHARIA DE PETRÓLEO">ENGENHARIA DE PETRÓLEO</option>
+                    <option value="ENGENHARIA DE PRODUÇÃO">ENGENHARIA DE PRODUÇÃO</option>
+                    <option value="ENGENHARIA DE SEGURANÇA NO TRABALHO">ENGENHARIA DE SEGURANÇA NO TRABALHO</option>
+                    <option value="ENGENHARIA DE SISTEMAS">ENGENHARIA DE SISTEMAS</option>
+                    <option value="ENGENHARIA DE SOFTWARE">ENGENHARIA DE SOFTWARE</option>
+                    <option value="ENGENHARIA DE TELECOMUNICAÇÕES">ENGENHARIA DE TELECOMUNICAÇÕES</option>
+                    <option value="ENGENHARIA DE TRANSPORTE E DA MOBILIDADE">ENGENHARIA DE TRANSPORTE E DA MOBILIDADE</option>
+                    <option value="ENGENHARIA ELÉTRICA">ENGENHARIA ELÉTRICA</option>
+                    <option value="ENGENHARIA ELETRÔNICA">ENGENHARIA ELETRÔNICA</option>
+                    <option value="ENGENHARIA FÍSICA">ENGENHARIA FÍSICA</option>
+                    <option value="ENGENHARIA FLORESTAL">ENGENHARIA FLORESTAL</option>
+                    <option value="ENGENHARIA HÍDRICA">ENGENHARIA HÍDRICA</option>
+                    <option value="ENGENHARIA INDUSTRIAL MADEIREIRA">ENGENHARIA INDUSTRIAL MADEIREIRA</option>
+                    <option value="ENGENHARIA MECÂNICA">ENGENHARIA MECÂNICA</option>
+                    <option value="ENGENHARIA MECATRÔNICA">ENGENHARIA MECATRÔNICA</option>
+                    <option value="ENGENHARIA METALÚRGICA">ENGENHARIA METALÚRGICA</option>
+                    <option value="ENGENHARIA NAVAL">ENGENHARIA NAVAL</option>
+                    <option value="ENGENHARIA NUCLEAR">ENGENHARIA NUCLEAR</option>
+                    <option value="ENGENHARIA QUÍMICA">ENGENHARIA QUÍMICA</option>
+                    <option value="ENGENHARIA TÊXTIL">ENGENHARIA TÊXTIL</option>
+                    <option value="ESCRITA CRIATIVA">ESCRITA CRIATIVA</option>
+                    <option value="ESPORTE">ESPORTE</option>
+                    <option value="ESTATÍSTICA">ESTATÍSTICA</option>
+                    <option value="ESTÉTICA E COSMÉTICA">ESTÉTICA E COSMÉTICA</option>
+                    <option value="ESTUDOS DE GÊNERO E DIVERSIDADE">ESTUDOS DE GÊNERO E DIVERSIDADE</option>
+                    <option value="ESTUDOS DE MÍDIA">ESTUDOS DE MÍDIA</option>
+                    <option value="EVENTOS">EVENTOS</option>
+                    <option value="FABRICAÇÃO MECÂNICA">FABRICAÇÃO MECÂNICA</option>
+                    <option value="FARMÁCIA">FARMÁCIA</option>
+                    <option value="FILOSOFIA">FILOSOFIA</option>
+                    <option value="FÍSICA">FÍSICA</option>
+                    <option value="FISIOTERAPIA">FISIOTERAPIA</option>
+                    <option value="FONOAUDIOLOGIA">FONOAUDIOLOGIA</option>
+                    <option value="FOTOGRAFIA">FOTOGRAFIA</option>
+                    <option value="GASTRONOMIA">GASTRONOMIA</option>
+                    <option value="GEOFÍSICA">GEOFÍSICA</option>
+                    <option value="GEOGRAFIA">GEOGRAFIA</option>
+                    <option value="GEOLOGIA">GEOLOGIA</option>
+                    <option value="GEOPROCESSAMENTO">GEOPROCESSAMENTO</option>
+                    <option value="GERONTOLOGIA">GERONTOLOGIA</option>
+                    <option value="GESTÃO AMBIENTAL">GESTÃO AMBIENTAL</option>
+                    <option value="GESTÃO COMERCIAL">GESTÃO COMERCIAL</option>
+                    <option value="GESTÃO DA INFORMAÇÃO">GESTÃO DA INFORMAÇÃO</option>
+                    <option value="GESTÃO DA PRODUÇÃO INDUSTRIAL">GESTÃO DA PRODUÇÃO INDUSTRIAL</option>
+                    <option value="GESTÃO DA QUALIDADE">GESTÃO DA QUALIDADE</option>
+                    <option value="GESTÃO DA TECNOLOGIA DA INFORMAÇÃO">GESTÃO DA TECNOLOGIA DA INFORMAÇÃO</option>
+                    <option value="GESTÃO DE COOPERATIVAS">GESTÃO DE COOPERATIVAS</option>
+                    <option value="GESTÃO DE RECURSOS HUMANOS">GESTÃO DE RECURSOS HUMANOS</option>
+                    <option value="GESTÃO DE SEGURANÇA PRIVADA">GESTÃO DE SEGURANÇA PRIVADA</option>
+                    <option value="GESTÃO DE SEGUROS">GESTÃO DE SEGUROS</option>
+                    <option value="GESTÃO DE TURISMO">GESTÃO DE TURISMO</option>
+                    <option value="GESTÃO DESPORTIVA E DE LAZER">GESTÃO DESPORTIVA E DE LAZER</option>
+                    <option value="GESTÃO EM SAÚDE">GESTÃO EM SAÚDE</option>
+                    <option value="GESTÃO FINANCEIRA">GESTÃO FINANCEIRA</option>
+                    <option value="GESTÃO HOSPITALAR">GESTÃO HOSPITALAR</option>
+                    <option value="GESTÃO PÚBLICA">GESTÃO PÚBLICA</option>
+                    <option value="HISTÓRIA DA ARTE">HISTÓRIA DA ARTE</option>
+                    <option value="HISTÓRIA">HISTÓRIA</option>
+                    <option value="HOTELARIA">HOTELARIA</option>
+                    <option value="HUMANIDADES">HUMANIDADES</option>
+                    <option value="INFORMÁTICA BIOMÉDICA">INFORMÁTICA BIOMÉDICA</option>
+                    <option value="IRRIGAÇÃO E DRENAGEM">IRRIGAÇÃO E DRENAGEM</option>
+                    <option value="JOGOS DIGITAIS">JOGOS DIGITAIS</option>
+                    <option value="JORNALISMO">JORNALISMO</option>
+                    <option value="LETRAS">LETRAS</option>
+                    <option value="LIBRAS">LIBRAS</option>
+                    <option value="LINGUAGENS E CÓDIGOS E SUAS TECNOLOGIAS">LINGUAGENS E CÓDIGOS E SUAS TECNOLOGIAS</option>
+                    <option value="LINGUÍSTICA">LINGUÍSTICA</option>
+                    <option value="LOGÍSTICA">LOGÍSTICA</option>
+                    <option value="LUTERIA">LUTERIA</option>
+                    <option value="MANUTENÇÃO DE AERONAVES">MANUTENÇÃO DE AERONAVES</option>
+                    <option value="MANUTENÇÃO INDUSTRIAL (T/L)">MANUTENÇÃO INDUSTRIAL (T/L)</option>
+                    <option value="MARKETING">MARKETING</option>
+                    <option value="MATEMÁTICA E COMPUTAÇÃO E SUAS TECNOLOGIAS">MATEMÁTICA E COMPUTAÇÃO E SUAS TECNOLOGIAS</option>
+                    <option value="MATEMÁTICA">MATEMÁTICA</option>
+                    <option value="MATERIAIS">MATERIAIS</option>
+                    <option value="MECATRÔNICA INDUSTRIAL">MECATRÔNICA INDUSTRIAL</option>
+                    <option value="MEDICINA VETERINÁRIA">MEDICINA VETERINÁRIA</option>
+                    <option value="MEDICINA">MEDICINA</option>
+                    <option value="METEOROLOGIA">METEOROLOGIA</option>
+                    <option value="MINERAÇÃO">MINERAÇÃO</option>
+                    <option value="MUSEOLOGIA">MUSEOLOGIA</option>
+                    <option value="MÚSICA">MÚSICA</option>
+                    <option value="MUSICOTERAPIA">MUSICOTERAPIA</option>
+                    <option value="NANOTECNOLOGIA">NANOTECNOLOGIA</option>
+                    <option value="NATUROLOGIA">NATUROLOGIA</option>
+                    <option value="NEGÓCIOS IMOBILIÁRIOS">NEGÓCIOS IMOBILIÁRIOS</option>
+                    <option value="NUTRIÇÃO">NUTRIÇÃO</option>
+                    <option value="OBSTETRÍCIA">OBSTETRÍCIA</option>
+                    <option value="OCEANOGRAFIA">OCEANOGRAFIA</option>
+                    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
+                    <option value="OFTÁLMICA">OFTÁLMICA</option>
+                    <option value="OPTOMETRIA">OPTOMETRIA</option>
+                    <option value="OUTRAS">OUTRAS</option>
+                    <option value="PAPEL E CELULOSE">PAPEL E CELULOSE</option>
+                    <option value="PEDAGOGIA">PEDAGOGIA</option>
+                    <option value="PETRÓLEO E GÁS">PETRÓLEO E GÁS</option>
+                    <option value="PILOTAGEM PROFISSIONAL DE AERONAVES">PILOTAGEM PROFISSIONAL DE AERONAVES</option>
+                    <option value="PROCESSOS GERENCIAIS">PROCESSOS GERENCIAIS</option>
+                    <option value="PROCESSOS METALÚRGICOS">PROCESSOS METALÚRGICOS</option>
+                    <option value="PROCESSOS QUÍMICOS">PROCESSOS QUÍMICOS</option>
+                    <option value="PRODUÇÃO AUDIOVISUAL">PRODUÇÃO AUDIOVISUAL</option>
+                    <option value="PRODUÇÃO CÊNICA">PRODUÇÃO CÊNICA</option>
+                    <option value="PRODUÇÃO CULTURAL">PRODUÇÃO CULTURAL</option>
+                    <option value="PRODUÇÃO DE BEBIDAS">PRODUÇÃO DE BEBIDAS</option>
+                    <option value="PRODUÇÃO EDITORIAL">PRODUÇÃO EDITORIAL</option>
+                    <option value="PRODUÇÃO FONOGRÁFICA">PRODUÇÃO FONOGRÁFICA</option>
+                    <option value="PRODUÇÃO MULTIMÍDIA">PRODUÇÃO MULTIMÍDIA</option>
+                    <option value="PRODUÇÃO PUBLICITÁRIA">PRODUÇÃO PUBLICITÁRIA</option>
+                    <option value="PRODUÇÃO SUCROALCOOLEIRA">PRODUÇÃO SUCROALCOOLEIRA</option>
+                    <option value="PRODUÇÃO TÊXTIL">PRODUÇÃO TÊXTIL</option>
+                    <option value="PSICOLOGIA">PSICOLOGIA</option>
+                    <option value="PSICOPEDAGOGIA">PSICOPEDAGOGIA</option>
+                    <option value="PUBLICIDADE E PROPAGANDA">PUBLICIDADE E PROPAGANDA</option>
+                    <option value="QUÍMICA">QUÍMICA</option>
+                    <option value="QUIROPRAXIA">QUIROPRAXIA</option>
+                    <option value="RÁDIO TV E INTERNET">RÁDIO TV E INTERNET</option>
+                    <option value="RADIOLOGIA">RADIOLOGIA</option>
+                    <option value="REDES DE COMPUTADORES">REDES DE COMPUTADORES</option>
+                    <option value="RELAÇÕES INTERNACIONAIS">RELAÇÕES INTERNACIONAIS</option>
+                    <option value="RELAÇÕES PÚBLICAS">RELAÇÕES PÚBLICAS</option>
+                    <option value="ROCHAS ORNAMENTAIS">ROCHAS ORNAMENTAIS</option>
+                    <option value="SANEAMENTO AMBIENTAL">SANEAMENTO AMBIENTAL</option>
+                    <option value="SAÚDE COLETIVA">SAÚDE COLETIVA</option>
+                    <option value="SAÚDE">SAÚDE</option>
+                    <option value="SECRETARIADO EXECUTIVO">SECRETARIADO EXECUTIVO</option>
+                    <option value="SECRETARIADO">SECRETARIADO</option>
+                    <option value="SEGURANÇA DA INFORMAÇÃO">SEGURANÇA DA INFORMAÇÃO</option>
+                    <option value="SEGURANÇA NO TRABALHO">SEGURANÇA NO TRABALHO</option>
+                    <option value="SEGURANÇA PÚBLICA">SEGURANÇA PÚBLICA</option>
+                    <option value="SERVIÇO SOCIAL">SERVIÇO SOCIAL</option>
+                    <option value="SERVIÇOS JUDICIÁRIOS E NOTARIAIS">SERVIÇOS JUDICIÁRIOS E NOTARIAIS</option>
+                    <option value="SILVICULTURA">SILVICULTURA</option>
+                    <option value="SISTEMAS BIOMÉDICOS">SISTEMAS BIOMÉDICOS</option>
+                    <option value="SISTEMAS DE INFORMAÇÃO">SISTEMAS DE INFORMAÇÃO</option>
+                    <option value="SISTEMAS DE TELECOMUNICAÇÕES">SISTEMAS DE TELECOMUNICAÇÕES</option>
+                    <option value="SISTEMAS ELÉTRICOS">SISTEMAS ELÉTRICOS</option>
+                    <option value="SISTEMAS EMBARCADOS">SISTEMAS EMBARCADOS</option>
+                    <option value="SISTEMAS PARA INTERNET">SISTEMAS PARA INTERNET</option>
+                    <option value="TEATRO">TEATRO</option>
+                    <option value="TECNOLOGIA DA INFORMAÇÃO">TECNOLOGIA DA INFORMAÇÃO</option>
+                    <option value="TEOLOGIA">TEOLOGIA</option>
+                    <option value="TERAPIA OCUPACIONAL">TERAPIA OCUPACIONAL</option>
+                    <option value="TRADUTOR E INTÉRPRETE">TRADUTOR E INTÉRPRETE</option>
+                    <option value="TRANSPORTE">TRANSPORTE</option>
+                    <option value="TURISMO">TURISMO</option>
+                    <option value="ZOOTECNIA">ZOOTECNIA</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">E-mail</label>
+                <input ng-model="paciente.email" id="pacienteEmail" required
+                class="form-control text-lowercase" type="mail" placeholder="Informe o e-mail"
+                />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">Telefone</label>
+                <input ng-model="paciente.telefone" mask="(99) 9?9999-9999" id="pacienteTelefone" class="form-control text-uppercase" type="text" placeholder="(xx) 99999-9999"
+                />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="text-transform: capitalize;">Indicação</label>
+                <input ng-model="paciente.indicacao" id="pacienteIndicacao" class="form-control text-uppercase" type="text" placeholder="Informe o profissional que recomendou"
+                />
+            </div>
+        </div>
+        <div class="col-sm-4" ng-if="tabCreate">
+            <div class="group-form">
+                <label>Consulta</label>
+                <div class="checkbox" style="left:10px;">
+                    <table>
+                        <tr>
+                            <td valign="top">
+                                <input type="checkbox" ng-model="consulta.check">
+                            </td>
+                            <td>
+                                <b>
+                                    <i class="fa fa-info-circle text-aqua"></i> Abrir consulta após salvar novo usuario.
+                                </b>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <button class="btn btn-info" ng-click="createPaciente()" ng-if="tabCreate" ng-disabled="{{ vencido }}">
+            <i class="fa fa-check"></i> Incluir</button>
+        <button class="btn btn-warning" ng-click="updatePaciente()" ng-if="tabUpdate">
+            <i class="fa fa-pencil"></i> Alterar</button>
+        <a href="/#!/pacientes" class="btn btn-default" ng-click="cancel()">
+            <i class="fa fa-remove text-red"></i> Cancelar
+        </a>
+    </div>
+</div>

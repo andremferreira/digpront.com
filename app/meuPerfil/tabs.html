@@ -1,0 +1,49 @@
+<content-header 
+    txt-pos-ico=" " icoimgs-p="fa fa-user-md text-blue" name="Meu Perfil" 
+    small="Dados Cadastrados" titulo-location="Meu Perfil"> 
+</content-header>
+<section class="content">
+    <div class="nav-tabs-custom" ng-controller="MeuPerfilCtrl" style="opacity: 0.92;">
+        <ul class="nav nav-tabs" >
+            <li ng-if="tabList" ng-class="{active: tabList}">
+                <a href data-target="#tabList" data-toggle="tab">
+                    <i class="fa fa-street-view"></i> Informações Pessoais
+                </a>
+            </li>
+            <li ng-if="tabUpdate" ng-class="{active: tabUpdate}">
+                    <a href data-target="#tabUpdate" data-toggle="tab">
+                        <i class="fa fa-refresh"></i> Atualizar
+                    </a>
+            </li>
+            <li ng-if="tabListAssistente" ng-class="{active: tabListAssistente}">
+                    <a href data-target="#tabListAssistente" data-toggle="tab">
+                        <i class="fa fa-users"></i> Assistente
+                    </a>
+            </li>        
+            <li ng-if="tabFormAssistente" ng-class="{active: tabFormAssistente}">
+                    <a href data-target="#tabFormAssistente" data-toggle="tab">
+                        <i class="fa fa-user-plus"></i> Cadastro de Assistente
+                    </a>
+            </li>             
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" 
+                 id="tabList" 
+                 ng-class="{active: tabList}" 
+                 ng-include="'meuPerfil/list.html'"></div>
+            <div class="tab-pane" 
+                id="tabUpdate" 
+                ng-class="{active: tabUpdate}"
+                ng-include="'meuPerfil/form.html'"></div>
+            <div class="tab-pane" 
+                id="tabListAssistente" 
+                ng-class="{active: tabListAssistente}"
+                ng-include="'meuPerfil/listAssistente.html'"></div>                
+            <div class="tab-pane" 
+                id="tabFormAssistente" 
+                ng-class="{active: tabFormAssistente}"
+                ng-include="'meuPerfil/formAssistente.html'"></div>                                   
+                <!-- <div class="tab-pane" id="tabAssistente" ng-include="'meuPerfil/formAssistente.html'"></div> --> 
+        </div>
+    </div>
+</section>

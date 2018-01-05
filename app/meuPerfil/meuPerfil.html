@@ -1,0 +1,27 @@
+<content-header
+  txt-pos-ico=" "
+  icoimgs-p="fa fa-user-md text-aqua"
+  name="Meu Perfil"
+  small="Dados Cadastrados"
+  titulo-location="Meu Perfil"
+  ></content-header>
+<section class="content">
+    <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li>
+                    <a href data-target="#tabForm" data-toggle="tab">
+                        <i class="fa fa-user-md"></i> Atualizar
+                    </a>
+                </li>
+                <li>
+                    <a href data-target="#tabAssistente" data-toggle="tab">
+                        <i class="fa fa-user-plus"></i> Assistente
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" ng-class="{active: true}" id="tabForm" ng-include="'meuPerfil/form.html'"></div>
+                <div class="tab-pane" id="tabAssistente" ng-include="'meuPerfil/formAssistente.html'"></div>
+            </div>
+        </div>
+</section>

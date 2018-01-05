@@ -1,0 +1,44 @@
+<div role="form">
+    <div class="box-body">
+        <field id="meuPerfilNome" label="Nome" model="meuPerfil.nome" placeholder="Informe o Nome" grid="12 6 4"></field>
+        <field id="meuPerfilSobrenome" label="Sobrenome" model="meuPerfil.sobrenome" placeholder="Informe o sobrenome" grid="12 6 4"></field>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+                <label>E-mail</label>
+                <input ng-model="meuPerfil.email" id="meuPerfilEmail" ng-click="alertaEmail()" class="form-control" type="email" placeholder="Informe o e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    ng-pattern-restrict required/>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+                <label>CRM</label>
+                <input ng-model="meuPerfil.crm" id="meuPerfilCrm" mask="99999" class="form-control" type="input" placeholder="Informe o CRM"
+                />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+                <label>CEP</label>
+                <input ng-model="meuPerfil.cep" id="meuPerfilCep" mask="99999-999" class="form-control" type="input" placeholder="Informe o CEP"
+                />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+                <label>Telefone</label>
+                <input ng-model="meuPerfil.celular" id="meuPerfilCelular" mask="(99) 9?9999-9999" class="form-control" type="input" placeholder="Informe o telefone"
+                />
+            </div>
+        </div>
+        <field id="meuPerfilPassword" label="Senha" model="meuPerfil.pass" type="password" grid="12 6 4"></field>
+        <field id="meuPerfilPasswordConfirmacao" label="Confirmação de Senha" model="meuPerfil.conf_pass" type="password" grid="12 6 4"></field>
+        <!-- <field id="meuPerfilPassword" model="meuPerfil.password" type="hidden" grid="12 6 4"></field> -->
+    </div>
+    <div class="box-footer">
+        <button class="btn btn-info" ng-click="updateMeuPerfil()">
+            <i class="fa fa-check"></i> Alterar</button>
+        <!-- <button class="btn btn-danger" ng-click="deleteAssistente()"> Remover Assistente</button> -->
+        <button class="btn btn-default" ng-click="cancel()">
+            <i class="fa fa-remove text-red"></i> Cancelar</button>
+    </div>
+</div>

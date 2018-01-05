@@ -1,0 +1,145 @@
+<div class="login-box" ng-controller="AuthCtrl as auth" style="
+border-radius: 20px 20px 0px 0px; border-style: solid; color:black; background-color:white; padding-top:10px;">
+    <div class="login-logo">
+        <i class="fa fa-stethoscope text-red"></i>
+        <b> Digital Prontuário</b>
+    </div>
+    <div class="login-box-body" style="background-color:rgb(250, 250, 250);" ng-if="!auth.assist">
+        <p class="login-box-msg" style="font-size: 22px; color:black;">
+            <b>Bem Vindo!</b>
+        </p>
+        <div class="box box-solid box-header with-border" ng-hide="auth.loginMode">
+            <table>
+                <tr>
+                    <td>
+                        <img src="/assets/imgs/imgDoctor.png" style="width:48px; height:48px" />
+                    </td>
+                    <td style="padding-top: 15px;padding-right: 15px;padding-bottom: 15px; padding-left: 15px;">
+                        <b> Informe seus dados pessoais no formulário abaixo para realizar seu cadastro..</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="box box-solid box-header with-border" ng-hide="!auth.loginMode">
+            <table>
+                <tr>
+                    <td style="padding-left:12px;">
+                        <h1>
+                            <i class="fa fa-expeditedssl text-red">
+                        </h1>
+                    </td>
+                    <td style="padding-top: 15px;padding-right: 15px;padding-bottom: 15px; padding-left: 15px;">
+                        <b> Esta área é de acesso restrito.</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="login-box-msg box-header with-border">
+            <form>
+                <auth-field id="authNome" model="auth.user.nome" type="input" placeholder="Informe o Nome" hide="auth.loginMode"></auth-field>
+                <auth-field id="authSobrenome" model="auth.user.sobrenome" type="input" placeholder="Informe o Sobrenome" hide="auth.loginMode"></auth-field>
+                <div class="form-group has-feedback">
+                    <input ng-model="auth.user.email" id="authEmail" class="form-control" type="email" placeholder="Informe o E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        ng-pattern-restrict required />
+                </div>
+                <auth-field id="authPass" model="auth.user.password" type="password" placeholder="Informe a Senha"></auth-field>
+                <auth-field id="authConfirmPass" model="auth.user.confirm_password" type="password" placeholder="Confirme a Senha" hide="auth.loginMode"></auth-field>
+                <div class="form-group has-feedback">
+                    <input ng-model="auth.user.crm" mask="99999" id="authCrm" class="form-control" type="input" placeholder="Informe o CRM" ng-hide="auth.loginMode"
+                    />
+                </div>
+                <div class="form-group has-feedback">
+                    <input ng-model="auth.user.cep" mask="99999-999" id="authCep" class="form-control" type="input" placeholder="Informe o CEP"
+                        ng-hide="auth.loginMode" />
+                </div>
+                <div class="form-group has-feedback">
+                    <input ng-model="auth.user.celular" mask="(99) 9?9999-9999" id="authCelular" class="form-control" type="input" placeholder="Informe o Celular"
+                        ng-hide="auth.loginMode" />
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <button class="btn btn-primary btn-block btn-flat" ng-click="auth.login()" ng-show="auth.loginMode" style="width:90px;">
+                            <b>Entrar</b>
+                        </button>
+                        <button class="btn btn-primary btn-block btn-flat" ng-click="auth.signup()" ng-hide="auth.loginMode" style="width:90px;">
+                            <b>Registrar</b>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br />
+        <div style="text-align:center;">
+            <img src="/assets/imgs/imgDoctor.png" style="width:24px; height:24px;" ng-hide="!auth.loginMode" />
+            <i class="fa fa-expeditedssl text-red" style="font-size:24px;" ng-hide="auth.loginMode"></i>
+            <a href="javascript:;" ng-click="auth.changeMode()">
+                {{ auth.loginMode ? 'Novo usuário? Registre-se aqui!' : 'Já é cadastrado? Retorne aqui!' }}
+            </a>
+        </div>
+        <hr>
+        <div style="text-align:center;">
+            <img src="/assets/imgs/secretary2.png" style="width:24px; height:24px;" />
+            <a href="javascript:;" ng-click="auth.changeModeAssist()">
+                {{ auth.assist ? 'Retornar ao Acesso de Usuário!' : 'Acesso de Assistente!' }} </a>
+        </div>
+
+    </div>
+    <div class="login-box-body" ng-if="auth.assist" style="background-color:rgb(250, 250, 250);">
+        <p class="login-box-msg" style="font-size: 22px; color:black;">
+            <b>Bem Vindo!</b>
+        </p>
+        <div class="box box-solid box-header with-border">
+            <table>
+                <tr>
+                    <td>
+                        <img src="/assets/imgs/secretary2.png" style="width:48px; height:48px" />
+                    </td>
+                    <td style="padding-top: 15px;padding-right: 15px;padding-bottom: 15px; padding-left: 15px;">
+                        <b> Assistente, por favor informe seu e-mail e senha abaixo para realização do login.</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="login-box-msg box-header with-border">
+            <form>
+
+                <div class="form-group has-feedback">
+                    <input ng-model="auth.user.crm" id="authCRM" class="form-control" type="text" placeholder="Informe o CRM do Médico Responsável."
+                        mask="99999" required />
+                </div>
+                <div class="form-group has-feedback">
+                    <input ng-model="auth.user.emailAssist" id="authEmailAssist" class="form-control" type="email" placeholder="Informe o E-mail"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ng-pattern-restrict required />
+                </div>
+                <auth-field id="authPassAssist" model="auth.user.passAssist" type="password" placeholder="Informe a Senha"></auth-field>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <button class="btn btn-primary btn-block btn-flat" ng-click="auth.loginAssist()" style="width:90px;">
+                            <b>Entrar</b>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr ng-hide="!auth.assist">
+        <div style="text-align:center;">
+            <p>
+                <img src="/assets/imgs/imgDoctor2.png" style="width:24px; height:24px;" />
+                <a href="javascript:;" ng-click="auth.changeModeAssist()">
+                    {{ auth.assist ? 'Retornar ao Acesso Convencional.' : 'Acesso de Assistente Aqui!' }} </a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    html,
+    .wrapper {
+        background-color: #fff!important;
+    }
+
+    .login-box-body {
+        background-color: rgb(241, 241, 241);
+    }
+</style>

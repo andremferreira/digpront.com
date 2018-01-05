@@ -1,0 +1,52 @@
+<content-header txt-pos-ico=" " icoimgs-p="fa fa-list-ol text-blue" name="Fila de Atendimento" small="Ordem de Chegada" titulo-location="Fila de Atendimento">
+</content-header>
+<section class="content">
+    <div class="nav-tabs-custom" ng-controller="FilaCtrl" style="opacity: 0.92;">
+        <ul class="nav nav-tabs">
+            <li ng-if="tabList" ng-class="{active: tabList}">
+                <a href data-target="#tabList" data-toggle="tab">
+                    <i class="fa fa-sort-numeric-asc"></i> Lista
+                </a>
+            </li>
+            <li ng-if="tabConsulta" ng-class="{active: tabConsulta}">
+                <a href data-target="#tabConsulta" data-toggle="tab">
+                    <i class="fa fa-book"></i> Consultas
+                </a>
+            </li>
+            <li ng-if="tabFormConsulta" ng-class="{active: tabFormConsulta}">
+                <a href data-target="#tabFormConsulta" data-toggle="tab">
+                    <i class="fa fa-file-text"></i> Prontuário
+                </a>
+            </li>
+            <li ng-if="tabFormConsultaAlterar" ng-class="{active: tabFormConsultaAlterar}">
+                <a href data-target="#tabFormConsultaAlterar" data-toggle="tab">
+                    <i class="fa fa-file-text"></i> Prontuário
+                </a>
+            </li>
+            <li ng-if="tabConsultaDetail" ng-class="{active: tabConsultaDetail}">
+                <a href data-target="#tabConsultaDetail" data-toggle="tab">
+                    <i class="fa fa-file-powerpoint-o"></i> Prontuário
+                </a>
+            </li>
+            <li ng-if="tabFormConsultaDpl" ng-class="{active: tabFormConsultaDpl}">
+                <a href data-target="#tabConsultaDetail" data-toggle="tab">
+                    <i class="fa fa fa-file-text"></i> Prontuário
+                </a>
+            </li>
+            <!-- <li>
+            <a href data-target="#tabForm" data-toggle="tab">
+                <i class="fa fa-user-plus"></i> Adicionar Paciente na Fila
+            </a>
+        </li> -->
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" ng-class="{active: tabList}" id="tabList" ng-include="'fila/listagem.html'"></div>
+            <div class="tab-pane" ng-class="{active: tabConsulta}" id="tabConsulta" ng-if="tabConsulta" ng-include="'../pacientes/consulta.html'"></div>
+            <div class="tab-pane" ng-class="{active: tabFormConsulta}" id="tabFormConsulta" ng-if="tabFormConsulta"  ng-include="'pacientes/formConsulta.html'"></div>
+            <div class="tab-pane" ng-class="{active: tabFormConsultaAlterar}" id="tabFormConsultaAlterar" ng-if="tabFormConsultaAlterar" 
+                ng-include="'../pacientes/formConsultaEd.html'"></div>
+            <div class="tab-pane" ng-class="{active: tabConsultaDetail}" id="tabConsultaDetail" ng-if="tabConsultaDetail"  ng-include="'../pacientes/consultaDetail.html'"></div>
+            <div class="tab-pane" ng-class="{active: tabFormConsultaDpl}" id="tabFormConsultaDpl" ng-if="tabFormConsultaDpl"  ng-include="'../pacientes/formConsultaEd.html'"></div>
+        </div>
+    </div>
+</section>

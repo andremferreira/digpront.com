@@ -1,0 +1,28 @@
+<!-- <a href class="sidebar-toggle" data-toggle="offcanvas" role="button"  >
+  <span ng-controller="MenuCtrl as menu" class="sr-only" ng-click="menu.menuMinify()"></span>
+</a> -->
+<div class="navbar-custom-menu">
+  <ul class="nav navbar-nav" style="background-color:rgb(219, 236, 250);" ng-controller="MenuCtrl as menu">
+    <!--li class="dropdown messages-menu" ng-include="'/template/header/navbar/messages.html'"></li-->
+    <!--li class="dropdown notifications-menu" ng-include="'/template/header/navbar/notifications.html'"></li-->
+    <!--li class="dropdown tasks-menu" ng-include="'/template/header/navbar/tasks.html'"></li-->
+    <li class="dropdown user user-menu" style="background-color:rgb(248, 203, 2);width:43px;" ng-if="menu.vencido">
+        <a href="/#!/renovacao" class="dropdown-toggle ng-scope" data-toggle="dropdown">
+          <i class="fa fa fa-credit-card text-black" alt="Renovação!"></i>          
+        </a>
+    </li>
+    <li class="dropdown user user-menu" style="background-color:rgb(104, 151, 253);">
+        <a href class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only"></span>
+        </a>
+      </li>
+    <li class="dropdown user user-menu" ng-include="'/template/header/navbar/user.html'" ng-controller="AuthCtrl as auth"></li>
+  </ul>
+</div>
+<!-- <div class="navbar-custom-menu" ng-controller="MenuCtrl as menu" ng-click="menu.menuMinify()">
+  <ul class="nav navbar-nav" style="background-color:rgb(104, 151, 253);">
+    <a href class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only"></span>
+    </a>
+  </ul>
+</div> -->

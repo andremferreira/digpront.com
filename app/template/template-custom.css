@@ -1,0 +1,56 @@
+html {
+  /* background-color: #ecf0f5; */
+  background-image: url('/assets/imgs/backgroundLogin2.jpg');
+  background-repeat: repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-color: transparent !important;
+}
+
+.main-footer {
+  position: fixed;
+  bottom:0px;
+  width:100%;
+}
+
+.wrapper {
+ background-color: transparent !important;
+}
+
+.content-wrapper {
+  background-color: transparent !important;
+}
+
+.content-header {
+  background-color:rgba(255,255,255,0.93) !important;
+  padding-bottom: 5px;
+}
+
+.right-side {
+  background-color: transparent !important;
+}
+
+.skin-black {
+  background-color: transparent !important;
+ }
+
+.left-side {
+  background-color: transparent !important;
+}
+
+ .main-sidebar{
+  background-color: rgba(5, 18, 37, 0.963) !important;
+ }
+
+.right-side{
+  background-color: transparent !important;
+}
+
+body {
+  background-color: transparent !important;
+}
+
+#toast-container {
+  top: 70px;
+}
+

@@ -1,0 +1,92 @@
+<div class="box-body">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">
+                <i class="fa fa-medkit text-info"></i> Detalhes da Consulta
+                <small>  -   <span style="font-size:14pt"><i class="fa fa-calendar text-info"></i> {{:: consulta.dataConsulta }} </span></small>
+            </h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:34%;">
+                        <h4>Nome</h4>
+                    </th>
+                    <th style="width:33%;">
+                        <h4>Sobrenome</h4>
+                    </th>
+                    <th style="width:33%;">
+                        <h4>Idade</h4>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{:: paciente.nome }}</td>
+                    <td>{{:: paciente.sobrenome }}</td>
+                    <td>{{:: paciente.idade }}</td>
+                </tr>
+                <tr>
+                    <td style="width:34%;">
+                        <h4>Queixa</h4>
+                    </td>
+                    <td colspan="2" style="width:33%;">
+                        <h4>Anamnese</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{:: consulta.queixa }}</td>
+                    <td colspan="2">{{:: consulta.anamnese }}</td>
+                </tr>
+                <tr>
+                    <td style="width:34%;">
+                        <h4>Antecedente</h4>
+                    </td>
+                    <td style="width:33%;">
+                        <h4>Alergia</h4>
+                    </td>
+                    <td style="width:33%;">
+                        <h4>Histórico Familiar</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{:: consulta.antecedente }}</td>
+                    <td>{{:: consulta.alergia }}</td>
+                    <td>{{:: consulta.historicoFamiliar }}</td>
+                </tr>
+                <tr>
+                    <td style="width:34%;">
+                        <h4>Exame Físico</h4>
+                    </td>
+                    <td colspan="2" style="width:33%;">
+                        <h4>Exame Complementar</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{:: consulta.exameFisico }}</td>
+                    <td colspan="2">{{:: consulta.exameCompl }}</td>
+                </tr>
+                <tr>
+                    <td style="width:34%;">
+                        <h4>Conduta</h4>
+                    </td>
+                    <td colspan="2" style="width:33%;">
+                        <h4>Receita Médica</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{:: consulta.conduta }}</td>
+                    <td colspan="2">{{:: consulta.receitaMedica }}</td>
+                </tr>
+                <tr>                 
+                    <td colspan="3" style="border:0;">
+                        <hr>
+                        <button style="padding-left:-50px;" class="btn btn-default margin" ng-click="cancelConsulta(paciente)" index="12">
+                            <i class="fa fa-mail-reply-all text-orange"></i><b> Voltar</b>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

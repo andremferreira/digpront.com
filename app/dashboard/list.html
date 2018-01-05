@@ -1,0 +1,29 @@
+<div class="row">
+    <value-box grid="4" color-class="bg-green" icon-class="fa fa-bank" value="R$ {{ dashboard.credit | number: 2  }}" text="Total de Créditos"></value-box>
+    <value-box grid="4" color-class="bg-red" icon-class="fa fa-credit-card" value="R$ {{ dashboard.debt | number: 2  }}" text="Total de Débitos"></value-box>
+    <value-box grid="4" color-class="bg-blue" icon-class="fa fa-money" value="R$ {{ dashboard.total | number: 2  }}" text="Valor Consolidado"></value-box>
+</div>
+<section class="content" ng-controller="BillingCycleCtrl">
+    
+<div class="box-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Mês</th>
+                <th>Ano</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="billingCycle in billingCycles">
+                <td>{{:: billingCycle.name }}</td>
+                <td>{{:: billingCycle.month }}</td>
+                <td>{{:: billingCycle.year }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- <div class="box-footer clearfix">
+    <paginator url="/#!/billingCycles" pages="{{ pages }}"></paginator>
+</div> -->
+</section>

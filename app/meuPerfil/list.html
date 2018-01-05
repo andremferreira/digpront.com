@@ -1,0 +1,103 @@
+<div class="box box-primary" ng-repeat="meuPerfil in meuPerfils">
+  <div class="box-header">
+    <h4 class="box-title" ng-if="usr2">
+      <i class="fa fa-newspaper-o text-info"></i> Detalhes
+    </h4>
+    <h4 class="box-title" ng-if="usr3">
+        <i class="fa fa-newspaper-o text-info"></i> Detalhes do Médico
+    </h4>    
+  </div>
+  <div class="box-body" ng-if="usr2">
+    <table class="table" style="width: 100%;">
+      <thead>
+        <tr>
+          <th style="width:20%;">Nome</th>
+          <th colspan="2" style="width:30%;">E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="meuPerfil in meuPerfils">
+          <td style="width:20%;">{{:: meuPerfil.nome }} {{:: meuPerfil.sobrenome }}</td>
+          <td colspan="2" style="width:30%;">{{:: meuPerfil.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table" style="width: 100%;">
+      <thead>
+        <tr>
+          <th style="width:20%;">CRM</th>
+          <th style="width:30%;">CEP</th>
+          <th style="width:30%;">Celular</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="meuPerfil in meuPerfils">
+          <td style="width:20%;">{{:: meuPerfil.crm }}</td>
+          <td style="width:30%;">{{:: meuPerfil.cep }}</td>
+          <td style="width:30%;">{{:: meuPerfil.celular }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box-body" ng-if="usr3">
+      <table class="table" style="width: 100%;">
+        <thead>
+          <tr>
+            <th style="width:20%;">Médico</th>
+            <th style="width:30%;">E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="meuPerfil in meuPerfils">
+            <td style="width:20%;">{{:: meuPerfil.nome }} {{:: meuPerfil.sobrenome }}</td>
+            <td style="width:30%;">{{:: meuPerfil.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table" style="width: 100%;">
+        <thead>
+          <tr>
+            <th style="width:20%;">CRM</th>
+            <th style="width:30%;">Celular</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="meuPerfil in meuPerfils">
+            <td style="width:20%;">{{:: meuPerfil.crm }}</td>
+            <td style="width:30%;">{{:: meuPerfil.celular }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+  <br>
+  <div>
+    <div class="box box-primary" ng-repeat="meuPerfil in meuPerfils">
+      <div class="box-header">
+        <h4 class="box-title" ng-if="usr2">
+          <i class="fa fa-cogs text-info"></i> Ações
+        </h4>
+        <h4 class="box-title" ng-if="usr3">
+            <i class="fa fa-cogs text-info"></i> Informações do Assistente
+        </h4>        
+      </div>
+      <div class="box-boddy">
+        <div class="from-group">
+          <div class="input-group" style="padding-left: 10px;">
+            <button class="btn btn-info" style="padding:7px; width:32px;" ng-click="showTabUpdate(meuPerfil)"
+            ng-if="usr2">
+              <i class="fa fa-refresh"></i>
+            </button> 
+            <button class="btn btn-success" style="padding:7px; width:32px;" ng-click="showAddAssistente(meuPerfil)"
+            ng-disabled="{{ vencido }}" ng-if="usr2">
+              <i class="fa fa-user-plus"></i>
+            </button> 
+            <button class="btn bg-purple" style="padding:7px; width:32px;" ng-click="showListAssistente(meuPerfil)">
+                <i class="fa fa-users"></i>
+              </button>            
+            <p></p>
+          </div>         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

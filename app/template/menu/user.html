@@ -1,0 +1,10 @@
+<div class="pull-left image"  ng-controller="MenuCtrl as menu">   
+  <img src="/assets/imgs/imgDoctor2.png" class="img-circle" alt="User Image" ng-if="menu.usr2">
+  <img src="/assets/imgs/secretary2.png" class="img-circle" alt="User Image" ng-if="menu.usr3">
+  <img src="/assets/imgs/imgDoctor.png" class="img-circle" alt="User Image" ng-if="menu.usr1">
+</div>
+<div class="pull-left info">
+    
+  <p-texto texto="{{:: auth.getUser().nome }}"></p-texto>
+  <a href><i class="fa fa-circle text-success"></i> Online</a>
+</div>
