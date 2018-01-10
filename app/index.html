@@ -12,14 +12,26 @@
 </head>
 
 <body class="skin-black fixed sidebar-mini">
+  <div id="overlay">
+    <div class="spinner">
+    </div>
+  </div>
   <div class="wrapper">
     <header class="main-header" ng-include="'/template/header/header.html'"></header>
     <aside class="main-sidebar" ng-include="'/template/menu/menu.html'"></aside>
-    <div class="content-wrapper" ui-view ng-controller="AuthCtrl as auth" ></div>
+    <div class="content-wrapper" ui-view ng-controller="AuthCtrl as auth"></div>
     <footer class="main-footer" ng-include="'/template/footer/footer.html'"></footer>
   </div>
 
   <script src="/assets/js/deps.min.js"></script>
   <script src="/assets/js/app.min.js"></script>
+  <script>
+    var overlay = document.getElementById("overlay")
+    window.addEventListener('load',
+      function () {
+        overlay.style.display = 'none';
+      })
+  </script>
 </body>
+
 </html>

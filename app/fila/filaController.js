@@ -455,11 +455,10 @@ function FilaController($scope, $http, $window, $location, $filter, msgs, tabs, 
   }
   
   $scope.reloadFila = function(usr3) {
-
-    if (usr3){
+    let loc = $location.path()
+    if (usr3 && loc == "/fila"){
+      //  console.log($location.path())
        setTimeout(function(){window.location.reload()}, 60000)
-      //setTimeout(function(){$scope.aplFiltroFilaTime()}, 6000)
-      
     }    
   }
 

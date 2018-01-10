@@ -35,33 +35,44 @@ border-radius: 20px 20px 0px 0px; border-style: solid; color:black; background-c
             </table>
         </div>
         <div class="login-box-msg box-header with-border">
-            <form>
-                <auth-field id="authNome" model="auth.user.nome" type="input" placeholder="Informe o Nome" hide="auth.loginMode"></auth-field>
-                <auth-field id="authSobrenome" model="auth.user.sobrenome" type="input" placeholder="Informe o Sobrenome" hide="auth.loginMode"></auth-field>
-                <div class="form-group has-feedback">
-                    <input ng-model="auth.user.email" id="authEmail" class="form-control" type="email" placeholder="Informe o E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                        ng-pattern-restrict required />
+            <form name="newUser">
+                <auth-field id="authNome" class-d="text-uppercase" model="auth.user.nome" type="input" placeholder="INFORME O NOME" hide="auth.loginMode"></auth-field>
+                <auth-field id="authSobrenome" class-d="text-uppercase" model="auth.user.sobrenome" type="input" placeholder="INFORME O SOBRENOME"
+                    hide="auth.loginMode"></auth-field>
+                <div class="form-group" ng-class="{'has-error': newUser.email.$error.pattern }">
+                    <input ng-model="auth.user.email" name="email" id="authEmail" class="form-control" type="email" placeholder="INFORME O E-MAIL"
+                        ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" required />
+                    <span class="help-block" ng-show="newUser.email.$error.pattern">E-mail Inválido!</span>
                 </div>
-                <auth-field id="authPass" model="auth.user.password" type="password" placeholder="Informe a Senha"></auth-field>
-                <auth-field id="authConfirmPass" model="auth.user.confirm_password" type="password" placeholder="Confirme a Senha" hide="auth.loginMode"></auth-field>
-                <div class="form-group has-feedback">
-                    <input ng-model="auth.user.crm" mask="99999" id="authCrm" class="form-control" type="input" placeholder="Informe o CRM" ng-hide="auth.loginMode"
+                <auth-field id="authPass" model="auth.user.password" type="password" placeholder="INFORME A SENHA"></auth-field>
+                <auth-field id="authConfirmPass" model="auth.user.confirm_password" type="password" placeholder="CONFIRME A SENHA" hide="auth.loginMode">
+                    <span class="help-block" ng-show="newUser.authPass.value != authConfirmPass.authPass.value"> </span>
+                </auth-field>
+
+                <div class="form-group" ng-class="{'has-error': newUser.crm.$error.pattern }">
+                    <!-- <label class="control-label" style="text-align:left;" ng-show="newUser.crm.$error.pattern" for="inputError"><i class="fa fa-times-circle-o"></i> Informação inválida.</label> -->
+                    <input ng-model="auth.user.crm" ng-change="auth.errorForm()" name="crm" ng-pattern="/^[0-9]{1,5}$/" required mask="99999"
+                        id="authCrm" class="form-control" type="input" placeholder="INFORME O CRM" ng-hide="auth.loginMode" />
+                    <span class="help-block" ng-show="newUser.crm.$error.pattern">CRM Inválido!</span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': newUser.cep.$error.pattern }">
+                    <input ng-model="auth.user.cep" name="cep" ng-pattern="/^[0-9]{5}-[0-9]{3}$/" mask="99999-999" id="authCep" class="form-control"
+                        type="input" placeholder="INFORME O CEP" ng-hide="auth.loginMode" />
+                    <span class="help-block" ng-show="newUser.cep.$error.pattern">CEP Inválido!</span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': newUser.tel.$error.pattern }">
+                    <input ng-model="auth.user.celular" name="tel" ng-pattern="/^\([1-9]{2}\) [0-9]{5}-[0-9]{4}$/" mask="(99) 99999-9999"
+                        id="authCelular" class="form-control" type="input" placeholder="INFORME O CELULAR" ng-hide="auth.loginMode"
                     />
-                </div>
-                <div class="form-group has-feedback">
-                    <input ng-model="auth.user.cep" mask="99999-999" id="authCep" class="form-control" type="input" placeholder="Informe o CEP"
-                        ng-hide="auth.loginMode" />
-                </div>
-                <div class="form-group has-feedback">
-                    <input ng-model="auth.user.celular" mask="(99) 9?9999-9999" id="authCelular" class="form-control" type="input" placeholder="Informe o Celular"
-                        ng-hide="auth.loginMode" />
+                    <span class="help-block" ng-show="newUser.tel.$error.pattern">Celular Inválido!</span>
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
                         <button class="btn btn-primary btn-block btn-flat" ng-click="auth.login()" ng-show="auth.loginMode" style="width:90px;">
                             <b>Entrar</b>
                         </button>
-                        <button class="btn btn-primary btn-block btn-flat" ng-click="auth.signup()" ng-hide="auth.loginMode" style="width:90px;">
+                        <button ng-show="!newUser.cep.$error.pattern && !newUser.crm.$error.pattern && !newUser.tel.$error.pattern && !newUser.email.$error.pattern && !auth.loginMode"
+                            class="btn btn-primary btn-block btn-flat" ng-click="auth.signup()" ng-hide="auth.loginMode" style="width:90px;">
                             <b>Registrar</b>
                         </button>
                     </div>
@@ -109,7 +120,7 @@ border-radius: 20px 20px 0px 0px; border-style: solid; color:black; background-c
                 </div>
                 <div class="form-group has-feedback">
                     <input ng-model="auth.user.emailAssist" id="authEmailAssist" class="form-control" type="email" placeholder="Informe o E-mail"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ng-pattern-restrict required />
+                    />
                 </div>
                 <auth-field id="authPassAssist" model="auth.user.passAssist" type="password" placeholder="Informe a Senha"></auth-field>
                 <div class="row">
@@ -141,5 +152,17 @@ border-radius: 20px 20px 0px 0px; border-style: solid; color:black; background-c
 
     .login-box-body {
         background-color: rgb(241, 241, 241);
+    }
+
+    .has-error {
+        position: relative;
+    }
+
+    .login-box-msg, .register-box-msg{
+        text-align:left !important; 
+    }
+
+  .form-group.has-error .form-control, .form-group.has-error .input-group-addon {
+    box-shadow: inset 0 0 1em rgb(255, 144, 110), 0 0 1em red;
     }
 </style>

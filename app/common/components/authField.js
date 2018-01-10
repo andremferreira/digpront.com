@@ -6,6 +6,7 @@ angular.module('digPront').component('authField', {
 		grid: '@',
 		icon: '@',
 		model: '=',
+		classD: '@',
 		placeholder: '@',
 		hide: '<'
 	},
@@ -16,7 +17,7 @@ angular.module('digPront').component('authField', {
 	},
 	template: `
 		<div class="form-group has-feedback">
-			<input ng-model="$ctrl.model" id="{{ $ctrl.id }}" class="form-control"
+			<input ng-model="$ctrl.model" id="{{ $ctrl.id }}" class="form-control {{ $ctrl.classD }}"
 				type="{{ $ctrl.type }}" placeholder="{{ $ctrl.placeholder }}"
 				ng-hide="$ctrl.hide" />
 			<span class="{{ $ctrl.iconClasses }}"></span>

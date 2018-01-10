@@ -17,7 +17,7 @@ function PacienteController($scope, $http, $filter, $location, $window, msgs, ta
   vm.fl = true
   vm.fl2 = false
   const usr = auth.getUser().medicoId
-  const limit = parseInt(50)
+  const limit = parseInt(30)
   const page = parseInt($location.search().page) || 1
   const url = `${consts.apiUrl}/cadastroPacientes/${usr}/${limit}/${(page - 1) * limit}`
   const url2 = `${consts.apiUrl}/cadastroPacientesQtd/${usr}`
@@ -136,12 +136,14 @@ function PacienteController($scope, $http, $filter, $location, $window, msgs, ta
       if (!$scope.paciente.consultas.queixa || !$scope.paciente.consultas.queixa.length) {
         msgs.addError('O atributo "Queixa" é obrigatório. ')
         return false
-      } else if (!$scope.paciente.consultas.anamnese || !$scope.paciente.consultas.anamnese.length) {
-        msgs.addError('O atributo "Anamnese" é obrigatório. ')
-        return false
       } else {
         consult.queixa = $scope.paciente.consultas.queixa
         consult.anamnese = $scope.paciente.consultas.anamnese
+        if (!$scope.paciente.consultas.anamnese || $scope.paciente.consultas.anamnese.length) {
+          consult.anamnese = null
+        } else {
+          consult.alergia = $scope.paciente.consultas.alergia
+        }        
         if (!$scope.paciente.consultas.alergia || $scope.paciente.consultas.alergia.length) {
           consult.alergia = null
         } else {
@@ -184,11 +186,7 @@ function PacienteController($scope, $http, $filter, $location, $window, msgs, ta
       if (!$scope.consulta.queixa || !$scope.consulta.queixa.length) {
         msgs.addError('O atributo "Queixa" é obrigatório. ')
         return false
-      } else if (!$scope.consulta.anamnese || !$scope.consulta.anamnese.length) {
-        msgs.addError('O atributo "Anamnese" é obrigatório. ')
-        return false
       } else {
-        //console.log($scope.consulta, $scope.consulta.index)
         $scope.paciente.consultas.splice($scope.consulta.index, 1, $scope.consulta)
         return true
       }
@@ -200,9 +198,6 @@ function PacienteController($scope, $http, $filter, $location, $window, msgs, ta
     if (consult) {
       if (!$scope.consulta.queixa || !$scope.consulta.queixa.length) {
         msgs.addError('O atributo "Queixa" é obrigatório. ')
-        return false
-      } else if (!$scope.consulta.anamnese || !$scope.consulta.anamnese.length) {
-        msgs.addError('O atributo "Anamnese" é obrigatório. ')
         return false
       } else {
         //console.log($scope.consulta, $scope.consulta.index)

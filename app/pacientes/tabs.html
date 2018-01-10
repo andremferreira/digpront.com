@@ -9,7 +9,7 @@
             </li>
             <li ng-if="tabCreate">
                 <a href data-target="#tabCreate" data-toggle="tab">
-                    <i class="fa fa-plus"></i> Incluir 
+                    <i class="fa fa-plus"></i> Incluir
 
                 </a>
             </li>
@@ -28,17 +28,17 @@
                     <i class="fa fa-file-text"></i> Prontuário
                 </a>
             </li>
-            <li ng-if="tabFormConsultaAlterar" ng-class="{active: tabFormConsultaAlterar}" >
-                    <a href data-target="#tabFormConsultaAlterar" data-toggle="tab">
-                        <i class="fa fa-file-text"></i> Prontuário
-                    </a>
+            <li ng-if="tabFormConsultaAlterar" ng-class="{active: tabFormConsultaAlterar}">
+                <a href data-target="#tabFormConsultaAlterar" data-toggle="tab">
+                    <i class="fa fa-file-text"></i> Prontuário
+                </a>
             </li>
             <li ng-if="tabConsultaDetail" ng-class="{active: tabConsultaDetail}">
                 <a href data-target="#tabConsultaDetail" data-toggle="tab">
                     <i class="fa fa-file-powerpoint-o"></i> Prontuário
                 </a>
             </li>
-            <li ng-if="tabFormConsultaDpl" ng-class="{active: tabFormConsultaDpl}" >
+            <li ng-if="tabFormConsultaDpl" ng-class="{active: tabFormConsultaDpl}">
                 <a href data-target="#tabConsultaDetail" data-toggle="tab">
                     <i class="fa fa fa-file-text"></i> Prontuário
                 </a>
@@ -47,53 +47,18 @@
                 <a href data-target="#tabPacienteFila" data-toggle="tab">
                     <i class="fa fa fa-list-ol"></i> Fila Paciente
                 </a>
-            </li>            
+            </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane" 
-                id="tabList"
-                ng-if="tabList"
-                ng-disabled="{{ vencido }}"
-                ng-class="{active: tabList}"
-                ng-include="'pacientes/list.html'"></div>
-            <div class="tab-pane" 
-                id="tabCreate" 
-                ng-if="tabCreate"
-                ng-include="'pacientes/form.html'"></div>
-            <div class="tab-pane" 
-                id="tabUpdate"
-                ng-if="tabUpdate"
-                ng-class="{active: tabUpdate}"
-                ng-include="'pacientes/form.html'"></div>
-            <div class="tab-pane" 
-                id="tabConsulta" 
-                ng-if="tabConsulta"
-                ng-class="{active: tabConsulta}"
-                ng-include="'pacientes/consulta.html'"></div>
-            <div class="tab-pane" 
-                id="tabFormConsulta"
-                ng-if="tabFormConsulta" 
-                ng-class="{active: tabFormConsulta}"
-                ng-include="'pacientes/formConsulta.html'"></div>
-            <div class="tab-pane" 
-                id="tabFormConsultaAlterar"
-                ng-if="tabFormConsultaAlterar" 
-                ng-class="{active: tabFormConsultaAlterar}"
+            <div class="tab-pane" id="tabList" ng-if="tabList" ng-disabled="{{ vencido }}" ng-class="{active: tabList}" ng-include="'pacientes/list.html'"></div>
+            <div class="tab-pane" id="tabCreate" ng-if="tabCreate" ng-include="'pacientes/form.html'"></div>
+            <div class="tab-pane" id="tabUpdate" ng-if="tabUpdate" ng-class="{active: tabUpdate}" ng-include="'pacientes/form.html'"></div>
+            <div class="tab-pane" id="tabConsulta" ng-if="tabConsulta" ng-class="{active: tabConsulta}" ng-include="'pacientes/consulta.html'"></div>
+            <div class="tab-pane" id="tabFormConsulta" ng-if="tabFormConsulta" ng-class="{active: tabFormConsulta}" ng-include="'pacientes/formConsulta.html'"></div>
+            <div class="tab-pane" id="tabFormConsultaAlterar" ng-if="tabFormConsultaAlterar" ng-class="{active: tabFormConsultaAlterar}"
                 ng-include="'pacientes/formConsultaEd.html'"></div>
-            <div class="tab-pane" 
-                id="tabConsultaDetail"
-                ng-if="tabConsultaDetail" 
-                ng-class="{active: tabConsultaDetail}"
-                ng-include="'pacientes/consultaDetail.html'"></div>
-            <div class="tab-pane" 
-                id="tabFormConsultaDpl"
-                ng-if="tabFormConsultaDpl" 
-                ng-class="{active: tabFormConsultaDpl}"
-                ng-include="'pacientes/formConsultaEd.html'"></div>
-            <div class="tab-pane" 
-                id="tabPacienteFila"
-                ng-if="tabPacienteFila" 
-                ng-class="{active: tabPacienteFila}"
-                ng-include="'pacientes/formFila.html'"></div>                                   
+            <div class="tab-pane" id="tabConsultaDetail" ng-if="tabConsultaDetail" ng-class="{active: tabConsultaDetail}" ng-include="'pacientes/consultaDetail.html'"></div>
+            <div class="tab-pane" id="tabFormConsultaDpl" ng-if="tabFormConsultaDpl" ng-class="{active: tabFormConsultaDpl}" ng-include="'pacientes/formConsultaEd.html'"></div>
+            <div class="tab-pane" id="tabPacienteFila" ng-if="tabPacienteFila" ng-class="{active: tabPacienteFila}" ng-include="'pacientes/formFila.html'"></div>
         </div>
 </section>
