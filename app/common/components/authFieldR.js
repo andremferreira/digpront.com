@@ -6,9 +6,9 @@ angular.module('digPront').component('authFieldR', {
 		grid: '@',
 		icon: '@',
 		model: '=',
+		classD: '@',
 		placeholder: '@',
-		hide: '<',
-		pattern: '@'
+		hide: '<'
 	},
 	controller: function() {
 		this.$onInit = () => {
@@ -17,10 +17,9 @@ angular.module('digPront').component('authFieldR', {
 	},
 	template: `
 		<div class="form-group has-feedback">
-			<input ng-model="$ctrl.model" id="{{ $ctrl.id }}" class="form-control"
+			<input ng-model="$ctrl.model" id="{{ $ctrl.id }}" class="form-control {{ $ctrl.classD }}"
 				type="{{ $ctrl.type }}" placeholder="{{ $ctrl.placeholder }}"
-				pattern="{{ $ctrl.pattern }}" ng-pattern-restrict required
-				ng-hide="$ctrl.hide" />
+				ng-hide="$ctrl.hide" required />
 			<span class="{{ $ctrl.iconClasses }}"></span>
 		</div>
 	`

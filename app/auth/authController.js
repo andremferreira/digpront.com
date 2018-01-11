@@ -1,13 +1,13 @@
 (function () {
 
     angular.module('digPront').controller('AuthCtrl', [
-        '$document',
+        '$location',
         'msgs',
         'auth',
         AuthController
     ])
 
-    function AuthController( $document, msgs, auth) {
+    function AuthController( $location, msgs, auth) {
         const vm = this
 
         vm.loginMode = true
@@ -33,5 +33,6 @@
         vm.logout = () => {
             auth.logout(() => $location.path('/'))
         }
+
     }
 })()
