@@ -1,7 +1,6 @@
 html {
-  /* background-color: #ecf0f5; */
   background-image: url('/assets/imgs/backgroundLogin2.jpg');
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position: center top;
   background-attachment: fixed;
   background-color: transparent !important;
@@ -19,6 +18,7 @@ html {
 
 .content-wrapper {
   background-color: transparent !important;
+  transition: unset !important; 
 }
 
 .content-header {

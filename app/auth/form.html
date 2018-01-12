@@ -13,19 +13,19 @@
         <!-- <p class="login-box-msg" style="font-size: 22px; color:black;">
             <b>Bem Vindo!</b>
         </p> -->
-        <div class="box box-solid box-header with-border" ng-hide="auth.loginMode">
+        <div class="box box-solid" style="margin-top:-7px; margin-bottom:10px;" ng-hide="auth.loginMode">
             <table>
                 <tr>
                     <td>
                         <img src="/assets/imgs/imgDoctor.png" style="width:48px; height:48px" />
                     </td>
                     <td style="padding-top: 15px;padding-right: 15px;padding-bottom: 15px; padding-left: 15px;">
-                        <b> Informe seus dados pessoais no formulário abaixo para realizar seu cadastro..</b>
+                        <b> Informe seus dados pessoais no formulário abaixo para realização cadastral..</b>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="box box-solid box-header with-border" ng-hide="!auth.loginMode">
+        <div class="box box-solid" style="margin-top:-7px; margin-bottom:0px;" ng-hide="!auth.loginMode">
             <table>
                 <tr>
                     <td style="padding-left:12px;">
@@ -88,19 +88,18 @@
                 {{ auth.loginMode ? 'Novo usuário? Registre-se aqui!' : 'Já é cadastrado? Retorne aqui!' }}
             </a>
         </div>
-        <hr>
-        <div style="text-align:center;">
+        <hr ng-if="auth.loginMode">
+        <div style="text-align:center;" ng-if="auth.loginMode">
             <img src="/assets/imgs/secretary2.png" style="width:24px; height:24px;" />
             <a href="javascript:;" ng-click="auth.changeModeAssist()">
                 {{ auth.assist ? 'Retornar ao Acesso de Usuário!' : 'Acesso de Assistente!' }} </a>
         </div>
-
     </div>
     <div class="login-box-body" ng-if="auth.assist" style="background-color:rgb(250, 250, 250);">
         <!-- <p class="login-box-msg" style="font-size: 22px; color:black;">
             <b>Bem Vindo!</b>
         </p> -->
-        <div class="box box-solid box-header with-border">
+        <div class="box box-solid" style="margin-top:-7px; margin-bottom:10px;">
             <table>
                 <tr>
                     <td>
@@ -176,7 +175,7 @@
         color: #FFFFFF;
         text-align: center;
         font-size: 18px;
-        transition: all 0.5s;
+        /* transition: all 0.5s; */
         cursor: pointer;
         width: 100% !important;
         border: solid #0097fc 1px;
@@ -191,7 +190,7 @@
         cursor: pointer;
         display: inline-block;
         position: relative;
-        transition: 0.5s;
+        /* transition: 0.5s; */
         width: 100% !important;
     }
 
@@ -199,7 +198,7 @@
         content: '\00bb';
         opacity: 0;
         top: 0;
-        transition: 0.5s;
+        /* transition: 0.5s; */
         width: 100% !important;
     }
 
