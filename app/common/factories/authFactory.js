@@ -30,6 +30,14 @@
             submit('loginAssist', user, callback)
         }        
 
+        function recoveryPass(user, callback) {
+            submit('recoveryPass', user, callback)
+        }    
+
+        function verifyRecoveryMode(string, callback) {
+            submit('verifyRecoveryMode', string, callback)
+        }
+
         function submit(url, user, callback) {
             $http.post(`${consts.oapiUrl}/${url}`, user)
                 .then(resp => {
@@ -66,7 +74,7 @@
             }
         }
 
-        return { signup, login, loginAssist, logout, getUser, validateToken }
+        return { signup, login, loginAssist, recoveryPass, logout, getUser, validateToken, verifyRecoveryMode }
     }
 
 })()

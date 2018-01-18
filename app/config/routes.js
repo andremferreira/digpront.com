@@ -35,8 +35,12 @@ angular.module('digPront').config([
       url: "/renovacao",
       templateUrl: "renovacao/renovacao.html"
     })
+    .state('recuperacao',{
+      url: "/recuperacao",
+      templateUrl: "recuperacao/form.html"
+    })
 
-    $urlRouterProvider.otherwise('/welcome')
+    // $urlRouterProvider.otherwise('/welcome')
 
     $httpProvider.interceptors.push('handleResponseError')
   }])
@@ -47,14 +51,13 @@ angular.module('digPront').config([
     '$window',
     'auth',
     function ($rootScope, $http, $location, $window, auth) {
-      validateUser()
-      $rootScope.$on('$locationChangeStart', () => validateUser())
-
+        validateUser()
+        $rootScope.$on('$locationChangeStart', () => validateUser())
+      
       function validateUser() {
         const user = auth.getUser()
         const authPage = '/auth.html'
         const isAuthPage = $window.location.href.includes(authPage)
-
         if (!user && !isAuthPage) {
           $window.location.href = authPage
         } else if (user && !user.isValid) {
