@@ -34,10 +34,18 @@
             submit('recoveryPass', user, callback)
         }    
 
-        function verifyRecoveryMode(string, callback) {
-            submit('verifyRecoveryMode', string, callback)
-        }
+        // function changeRecoveryPass(url, user, callback) {
+        //     $http.post(`${consts.oapiUrl}/changeRecoveryPass`, user).then( resp => {
+        //             if(callback) callback(null, resp.data)
+        //         }).catch(function (resp) {
+        //             if (callback) callback(resp.data.errors, null)
+        //         })
+        // }
 
+        function changeRecoveryPass(user, callback) {
+            submit('changeRecoveryPass', user, callback)
+        }  
+        
         function submit(url, user, callback) {
             $http.post(`${consts.oapiUrl}/${url}`, user)
                 .then(resp => {
@@ -74,7 +82,7 @@
             }
         }
 
-        return { signup, login, loginAssist, recoveryPass, logout, getUser, validateToken, verifyRecoveryMode }
+        return { signup, login, loginAssist, recoveryPass, logout, getUser, validateToken, changeRecoveryPass }
     }
 
 })()

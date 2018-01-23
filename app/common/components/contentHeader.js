@@ -24,10 +24,11 @@ angular.module('digPront').component('contentHeader', {
    </h1>
    <ol class="breadcrumb">
        <li>
-           <a href="#">
+           <a href="/#!/welcome">
                <i class="fa fa-dashboard"></i> Home</a>
        </li>
-       <li class="active"> {{ $ctrl.tituloLocation }}</li>
+            
+       <li class="active"><a href="/#!/{{ $ctrl.tituloLocation }}"> {{ $ctrl.tituloLocation }}</a></li>
    </ol>
 </section>
    `

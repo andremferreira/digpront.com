@@ -67,7 +67,7 @@ angular.module('digPront').config([
             } else {
               user.isValid = true
               $http.defaults.headers.common.Authorization = user.token
-              isAuthPage ? $window.location.href = '/' : $location.path()
+              isAuthPage ? $window.location.href = '/' : $location.path('/welcome')
             }
           })
         }

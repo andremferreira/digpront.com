@@ -8,10 +8,48 @@
     <div class="login-logo">
         <i class="fa fa-stethoscope text-red"></i>
         <b> Digital Prontuário</b>
-        <p style="font-size:10px; color:#0e5aff;">
+        <p style="font-size:10px; color:#0e5aff;" ng-if="!auth.recoveryVerifyMode">
             <a href="javascript:;" ng-click="auth.changeModeForgotPass()">
                 {{ auth.forgotPass ? 'Rerornar a tela de acesso.' : 'Esqueci minha senha.' }} </a>
         </p>
+    </div>
+    <div class="login-box-body" style="background-color:rgb(250, 250, 250); width:100%;" ng-show="auth.recoveryVerifyMode">
+        <!-- <p class="login-box-msg" style="font-size: 22px; color:black;">
+                <b>Bem Vindo!</b>
+            </p> -->
+        <div class="box box-solid" style="margin-top:-7px; margin-bottom:10px;" ng-show="auth.recoveryVerifyMode">
+            <table>
+                <tr>
+                    <td style="padding-left:15px;">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-key fa-stack-1x" style="color:black;"></i>
+                            <i class="fa fa-circle-o fa-stack-2x" style="color:rgb(11, 165, 192);text-shadow: 2px 2px 4px #0285ff62;"></i>
+                        </span>
+                    </td>
+                    <td style="padding-top: 15px;padding-right: 15px;padding-bottom: 20px; padding-left: 15px;">
+                        <b> Informe abaixo a nova senha.</b>
+                    </td>
+                </tr>
+            </table>
+            <div class="login-box-msg box-header with-border" style="width:100%;">
+                <form name="recoveryUserPass" style="width:100%;">
+                    <div class="form-group" ng-class="{'has-error': recoveryUserPass.passRecovery.$error.pattern }" style="width:100%;">
+                        <input ng-model="auth.user.pass" name="passRecovery" id="passRecovery" class="form-control" type="password" placeholder="INFORME A NOVA SENHA."
+                            ng-pattern="/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,12})/" required />
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': recoveryUserPass.confPassRecovery.$error.pattern }" style="width:100%;">
+                        <input ng-model="auth.user.confPass" name="confPassRecovery" id="confPassRecovery" class="form-control" type="password" placeholder="CONFIRME A SENHA"
+                            ng-pattern="/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,12})/" required />
+                        <!--span class="help-block" ng-show="newUser.email.$error.pattern">E-mail Inválido!</span-->
+                    </div>
+                    <div style="width:100%">
+                        <button title="Alteração de Senha" class="btn btn-block btn-primary btn-lg" ng-click="auth.changeRecoveryPass()" style="width:100%;">
+                            <b>Modificar</b>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="login-box-body" style="background-color:rgb(250, 250, 250); width:100%;" ng-show="auth.forgotPass">
         <!-- <p class="login-box-msg" style="font-size: 22px; color:black;">
@@ -34,8 +72,8 @@
             <div class="login-box-msg box-header with-border" style="width:100%;">
                 <form name="recoveryUser" style="width:100%;">
                     <div class="form-group" ng-class="{'has-error': recoveryUser.crmRecovery.$error.pattern }" style="width:100%;">
-                        <input ng-model="auth.user.crm" name="crmRecovery" id="crmRecovery" class="form-control" type="text" placeholder="INFORME O CRM." mask="99999"
-                        ng-pattern="/^[0-9]{1,5}$/" required />
+                        <input ng-model="auth.user.crm" name="crmRecovery" id="crmRecovery" class="form-control" type="text" placeholder="INFORME O CRM."
+                            mask="99999" ng-pattern="/^[0-9]{1,5}$/" required />
                     </div>
                     <div class="form-group" ng-class="{'has-error': recoveryUser.emailRecovery.$error.pattern }" style="width:100%;">
                         <input ng-model="auth.user.email" name="emailRecovery" id="authEmailRecovery" class="form-control" type="email" placeholder="INFORME O E-MAIL"
@@ -51,11 +89,11 @@
             </div>
         </div>
     </div>
-    <div class="login-box-body" style="background-color:rgb(250, 250, 250); width:100%;" ng-if="!auth.assist && !auth.forgotPass">
+    <div class="login-box-body" style="background-color:rgb(250, 250, 250); width:100%;" ng-if="!auth.assist && !auth.forgotPass && !auth.recoveryVerifyMode">
         <!-- <p class="login-box-msg" style="font-size: 22px; color:black;">
             <b>Bem Vindo!</b>
         </p> -->
-        <div class="box box-solid" style="margin-top:-7px; margin-bottom:10px;" ng-hide="auth.loginMode && !auth.forgotPass">
+        <div class="box box-solid" style="margin-top:-7px; margin-bottom:10px;" ng-hide="auth.loginMode && !auth.forgotPass && !auth.recoveryVerifyMode">
             <table>
                 <tr>
                     <td>
