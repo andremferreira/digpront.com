@@ -31,7 +31,7 @@
                     </td>
                 </tr>
             </table>
-            <div class="login-box-msg box-header with-border" style="width:100%;">
+            <div class="login-box-msg box-header with-border" style="width:100%;" ng-if="!auth.retornoLogin">
                 <form name="recoveryUserPass" style="width:100%;">
                     <div class="form-group" ng-class="{'has-error': recoveryUserPass.passRecovery.$error.pattern }" style="width:100%;">
                         <input ng-model="auth.user.pass" name="passRecovery" id="passRecovery" class="form-control" type="password" placeholder="INFORME A NOVA SENHA."
@@ -48,6 +48,13 @@
                         </button>
                     </div>
                 </form>
+            </div>
+            <div class="login-box-msg box-header with-border" style="width:100%; text-align:center;" ng-if="auth.retornoLogin" >
+                    <span>
+                        <center>
+                            <a href="/" ng-click="auth.logout()"> Retornar ao login... {{ auth.timeOut }}</a>
+                        </center>
+                    </span>
             </div>
         </div>
     </div>

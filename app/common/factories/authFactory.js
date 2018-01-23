@@ -34,16 +34,9 @@
             submit('recoveryPass', user, callback)
         }    
 
-        // function changeRecoveryPass(url, user, callback) {
-        //     $http.post(`${consts.oapiUrl}/changeRecoveryPass`, user).then( resp => {
-        //             if(callback) callback(null, resp.data)
-        //         }).catch(function (resp) {
-        //             if (callback) callback(resp.data.errors, null)
-        //         })
-        // }
-
         function changeRecoveryPass(user, callback) {
             submit('changeRecoveryPass', user, callback)
+            if (callback) callback(resp.data.errors, null)
         }  
         
         function submit(url, user, callback) {
